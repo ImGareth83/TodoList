@@ -34,7 +34,6 @@ public class TaskController {
         return "redirect:/";
     }
 
-    @CrossOrigin(origins = "http://localhost:8080")
     @PostMapping("/add")
     public String save(@RequestParam(name="title", required = true) String title,
                      @RequestParam(name="description", required = true) String description,
