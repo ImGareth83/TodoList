@@ -33,7 +33,7 @@ Users should be able to:
 
 ### Links
 
-- Live Site URL: [https://imgareth83.github.io/todoList/](https://imgareth83.github.io/colmarAcademy/)
+- Live Site URL: [https://todolistspringboot01.herokuapp.com/](https://todolistspringboot01.herokuapp.com/)
 
 ## My process
 
