@@ -15,10 +15,10 @@
 
             <div>
                 <div>
-                    <form id="newItemForm">
-                        <input type="text" id="title" name="title" placeholder="Buy Groceries">
-                        <input type="text" id="description" name="description" placeholder="Onion and Tomatoes">
-                        <input type="datetime-local" id="targetDateTime" name="targetDateTime">
+                    <form th:action="@{/add}" th:object="${newTask}" method="post">
+                        <input type="text" th:field="*{title}" name="title" placeholder="Buy Groceries">
+                        <input type="text" th:field="*{description}" name="description" placeholder="Onion and Tomatoes">
+                        <input type="datetime-local" th:field="*{targetDateTime}"  name="targetDateTime">
                         <button type="submit" class="btn btn-primary btn-block">Save</button>
                     </form>
                 </div>
@@ -33,11 +33,13 @@
                         </tr>
                     </thead>
                     <tbody id="row">
-                        <tr>
-                            <td>Run Errands</td>
-                            <td>buy Kuih Lapis for family, and Jean and Bryan</td>
-                            <td>05/06/2021</td>
-                            <td><a href="#">-</a></td>
+                        <tr th:each="task : ${tasks}">
+                            <td th:text="${task.title}"></td>
+                            <td th:text="${task.description}"></td>
+                            <td th:text="${task.targetDateTime}"></td>
+                            <td>
+                                <a th:href="@{'/delete/'+${task.id}}">delete</a>
+                            </td>
                         </tr>
 
                     </tbody>
@@ -46,9 +48,9 @@
 
         </main>
 
-        <script type="text/javascript" th:src="@{/js/taskController.js}" ></script>
-        <script type="text/javascript" th:src="@{/js/taskListing.js}" ></script>
-        <script type="text/javascript" th:src="@{/js/taskForm.js}" ></script>
+<!--        <script type="text/javascript" th:src="@{/js/taskController.js}" ></script>-->
+<!--        <script type="text/javascript" th:src="@{/js/taskListing.js}" ></script>-->
+<!--        <script type="text/javascript" th:src="@{/js/taskForm.js}" ></script>-->
 
     </body>
 
