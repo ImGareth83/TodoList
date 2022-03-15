@@ -1,0 +1,9 @@
+.main-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.main-table{
+    width: 100%;
+}
